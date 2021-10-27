@@ -1,0 +1,47 @@
+.searchPage {
+    flex: 0.8;
+    background-color: #f9f9f9;
+    padding: 20px 10px;
+}
+
+.searchPage__filter {
+    display: flex;
+    align-items: center;
+    color: grey !important;
+    font-size: x-small !important;
+}
+
+.searchPage__filter>h2 {
+    margin-left: 10px;
+    font-size: 1.5em;
+    color: rgba(68, 68, 68, 0.781);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.searchPage>hr {
+    height: 0.8px;
+    border: none;
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.searchPage>h3 {
+    margin: 20px 6px;
+    font-weight: 600;
+}
+
+.searchPage__channelRow,
+.searchPage__videoRow {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+    .searchPage {
+        /* width: 484px; */
+        flex: 1;
+    }
+}

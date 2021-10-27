@@ -1,0 +1,61 @@
+.channelRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.channelRow__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.channelRow__logo {
+    width: 136px !important;
+    height: 136px !important;
+    margin: 10px 60px !important;
+}
+
+.channelRow__text>h4 {
+    padding-bottom: 8px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.856);
+}
+
+.channelRow__text>p {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.channelRow__subscribeButton {
+    background-color: rgb(255, 0, 0) !important;
+    margin-right: 10px !important;
+}
+
+@media screen and (min-width: 600px) {
+    .channelRow {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .channelRow {
+        justify-content: space-around;
+    }
+    .channelRow__logo {
+        /* flex: 0.3; */
+        margin: 0 !important;
+    }
+    .channelRow__text {
+        flex: 0.7;
+        justify-content: space-evenly;
+    }
+    .channelRow__subscribeButton {
+        display: none !important;
+    }
+    .channelRow__notification {
+        display: none !important;
+    }
+}

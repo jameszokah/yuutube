@@ -1,0 +1,41 @@
+.sidebar {
+    flex: 0.2;
+}
+
+.sidebar>.sidebar__link.active>.sidebar__item {
+    background-color: lightgrey;
+}
+
+.sidebar>.sidebar__link.active>.sidebar__item>.sidebar__title {
+    font-weight: bold;
+}
+
+.sidebar>.sidebar__link.active>.sidebar__item>.sidebar__icon {
+    color: #000;
+    font-weight: bolder;
+}
+
+.sidebar>.sidebar__link {
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar>hr {
+    height: 1px;
+    border: none;
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1312px) {
+    .sidebar {
+        flex: 0.1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}
