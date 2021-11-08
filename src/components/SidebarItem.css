@@ -4,10 +4,18 @@
     padding: 10px 20px;
 }
 
+.dark-sidebar__item:hover {
+    background-color: #303030;
+}
+
 .sidebar__icon {
     color: #606060;
     font-size: 1.5em !important;
     font-weight: 300 !important;
+}
+
+.dark-sidebar__item>.sidebar__icon {
+    color: #fff !important;
 }
 
 .sidebar__title {
@@ -23,7 +31,12 @@
 }
 
 .sidebar__item:hover>.sidebar__icon {
-    color: #000;
+    color: #000 !important;
+    font-weight: bolder !important;
+}
+
+.dark-sidebar__item:hover>.sidebar__icon {
+    color: #fff !important;
     font-weight: bolder !important;
 }
 

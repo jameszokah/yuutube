@@ -1,4 +1,10 @@
+.app {
+    overflow: hidden;
+}
+
 .app__pages {
     width: 100vw;
     display: flex;
+    overflow-y: scroll;
+    min-height: 100vh;
 }

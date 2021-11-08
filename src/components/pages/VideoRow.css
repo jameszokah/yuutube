@@ -4,13 +4,15 @@
 }
 
 .videoRow__thumbnail {
-    width: 360px !important;
-    height: 202px !important;
+    width: 360px;
+    height: 202px;
+    display: flex;
 }
 
 .videoRow__thumbnail>.videoRow__link>img {
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 .videoRow__link {
@@ -18,10 +20,19 @@
     text-decoration: none;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex: 1;
 }
 
 .videoRow__text {
     margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.videoRow__text h3 {
+    font-weight: 400;
 }
 
 .videoRow__avatar {
@@ -34,11 +45,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-top: 4px;
 }
 
 .videoRow__text p {
     font-size: 12px;
     color: #606060;
+    padding-top: 4px;
 }
 
 .videoRow__views {
@@ -64,6 +77,10 @@
     .videoRow__text {
         width: min-content;
         flex: 1;
+    }
+    .videoRow__text h3 {
+        font-weight: 400;
+        font-size: 1em;
     }
 }
 

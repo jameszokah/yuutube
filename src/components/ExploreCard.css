@@ -1,0 +1,30 @@
+.explore__card {
+    width: 210px;
+    height: 116px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 8px;
+    padding-left: 10px;
+    color: #000;
+    cursor: pointer;
+}
+
+.explore__cardIcon {
+    padding-bottom: 10px;
+}
+
+.explore__card:hover {
+    background-color: lightgrey;
+}
+
+.dark__cardExplore {
+    background-color: #212121;
+}
+
+.dark__cardExplore:hover {
+    background-color: #000;
+}

@@ -3,20 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
-import AuthContextProvider from "./context/AuthContext";
+import ThemeProvider from "./context/ThemeContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import reportWebVitals from "./reportWebVitals";
 
 const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContextProvider>
+    <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <Router>
           <App />
         </Router>
       </QueryClientProvider>
-    </AuthContextProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

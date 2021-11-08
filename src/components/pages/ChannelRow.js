@@ -1,6 +1,9 @@
 import React from "react";
-import { Avatar, Button } from "@mui/material";
+import millify from "millify";
+import { Avatar, Button, IconButton } from "@mui/material";
 import { NotificationsOutlined } from "@mui/icons-material";
+import { useDarkTheme } from "../../context/ThemeContext";
+import useChannelIcon from "../FetchChannelIcon";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ChannelRow.css";
@@ -8,25 +11,48 @@ import "./ChannelRow.css";
 const ChannelRow = ({
   image,
   channel,
+  channelId,
   verified,
   subs,
   numOfVideos,
   description,
+  i,
 }) => {
+  const { state } = useDarkTheme();
+  const [{ data }] = useChannelIcon(channelId);
+
+  const channelInfo = data && data?.data?.items[0];
+
   return (
     <div className="channelRow">
       {image ? (
         <Avatar src={image} alt={channel} className="channelRow__logo" />
       ) : (
-        <Skeleton width={200} height={200} circle />
+        <Skeleton width={160} height={160} circle />
       )}
       <div className="channelRow__text">
-        <h4>{channel || <Skeleton />}</h4>
-        <p>
-          {subs || <Skeleton />} subscribers . {numOfVideos || <Skeleton />}
-          videos
+        <h4
+          style={{
+            color: state.darkMode && "#ffffff",
+          }}
+        >
+          {channel || <Skeleton />}
+        </h4>
+        <p
+          style={{
+            color: state.darkMode && "#ffffff",
+          }}
+        >
+          {data && millify(channelInfo?.statistics?.subscriberCount)}{" "}
+          subscribers . {data && channelInfo?.statistics?.videoCount} videos
         </p>
-        <p>{description || <Skeleton />}</p>
+        <p
+          style={{
+            color: state.darkMode && "#ffffff",
+          }}
+        >
+          {description || <Skeleton />}
+        </p>
       </div>
       <Button
         variant="contained"
@@ -35,7 +61,9 @@ const ChannelRow = ({
       >
         SUBSCRIBE
       </Button>
-      <NotificationsOutlined className="channelRow__notification" />
+      <IconButton>
+        <NotificationsOutlined className="channelRow__notification" />
+      </IconButton>
     </div>
   );
 };

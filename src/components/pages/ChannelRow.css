@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-right: 5px;
+    font-weight: 400;
 }
 
 .channelRow__logo {
@@ -22,10 +23,12 @@
     padding-bottom: 8px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.856);
+    font-weight: 400;
 }
 
 .channelRow__text>p {
     font-size: 0.8em;
+    font-weight: 400;
     color: grey;
 }
 

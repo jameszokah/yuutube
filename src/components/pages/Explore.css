@@ -1,0 +1,16 @@
+.explore__videos {
+    padding: 10px 50px;
+    width: 100vw;
+}
+
+.explore__cardWrapper {
+    display: flex;
+    padding: 20px 0;
+    padding-bottom: 40px;
+}
+
+.explore__videoContents {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}

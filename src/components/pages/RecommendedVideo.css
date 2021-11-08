@@ -1,14 +1,23 @@
 .recommended__videos {
-    flex: 0.8;
-    background-color: #f9f9f9;
-    padding: 20px;
-    padding-bottom: 0;
+    flex: 1.1;
+    /* margin: 2px 14px; */
+    /* padding-bottom: 0; */
+    width: 100%;
+}
+
+.recommended__videos hr {
+    height: 0.4px;
+    border: none;
+    background-color: lightgrey;
 }
 
 .recommended__videoContents {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 8px 19px;
+    overflow-y: hidden;
 }
 
 @media screen and (max-width: 600px) {

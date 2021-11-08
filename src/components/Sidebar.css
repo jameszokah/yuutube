@@ -1,9 +1,15 @@
 .sidebar {
     flex: 0.2;
+    position: sticky;
+    left: 0;
 }
 
 .sidebar>.sidebar__link.active>.sidebar__item {
     background-color: lightgrey;
+}
+
+.dark-sidebar>.sidebar__link.active>.sidebar__item {
+    background-color: #303030;
 }
 
 .sidebar>.sidebar__link.active>.sidebar__item>.sidebar__title {
@@ -15,13 +21,23 @@
     font-weight: bolder;
 }
 
+.dark-sidebar>.sidebar__link.active>.sidebar__item>.sidebar__icon {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+}
+
 .sidebar>.sidebar__link {
     text-decoration: none;
     color: #000;
 }
 
+.dark-sidebar>hr {
+    height: 1px !important;
+    background-color: #373737 !important;
+}
+
 .sidebar>hr {
-    height: 1px;
+    height: 0.5px;
     border: none;
     background-color: lightgrey;
     margin-top: 10px;

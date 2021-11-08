@@ -11,12 +11,18 @@ import {
   ExpandMoreOutlined,
 } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
+import { useDarkTheme } from "../context/ThemeContext";
 import SidebarItem from "./SidebarItem";
 import "./Sidebar.css";
 
 const Sidebar = () => {
+  const { state } = useDarkTheme();
+
   return (
-    <div className="sidebar">
+    <div
+      className={`sidebar ${state.darkMode && "dark-sidebar"}`}
+      style={{ backgroundColor: state.darkMode && "#202020" }}
+    >
       <NavLink to="/" exact className="sidebar__link">
         <SidebarItem Icon={HomeOutlined} title="Home" />
       </NavLink>
