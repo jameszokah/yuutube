@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import youtube from "../utils/youtube";
 
-const key = "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc";
 const FetchChannelIcon = (channelId) => {
   const result = useQuery(
     ["thumbnail", channelId],
@@ -11,7 +10,7 @@ const FetchChannelIcon = (channelId) => {
         params: {
           part: "snippet,statistics",
           id: channelId,
-          key: key,
+          key: process.env.REACT_APP_YOUTUBE_API_KEY,
         },
       }))
   );
@@ -20,20 +19,3 @@ const FetchChannelIcon = (channelId) => {
 };
 
 export default FetchChannelIcon;
-
-// export const useChannelSubscription = (channelId) => {
-//   const result = useQuery(
-//     ["subscription", channelId],
-//     async () =>
-//       channelId &&
-//       (await youtube.get("subscriptions", {
-//         params: {
-//           part: "snippet,subscriberSnippet",
-//           channelId: channelId,
-//           key: key,
-//         },
-//       }))
-//   );
-
-//   return [{ ...result }];
-// };

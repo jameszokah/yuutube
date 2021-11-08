@@ -40,7 +40,6 @@ const Header = () => {
   const signIn = useCallback(async () => {
     try {
       const users = await signInWithGoogle();
-      // setCurrentUser(users);
       setUser(users);
       setIsAuth(true);
       console.log(users);
@@ -59,7 +58,7 @@ const Header = () => {
     } catch (err) {
       console.log(err);
     }
-  }, [user, signOutUser]);
+  }, [user, signOutUser, setCurrentUser]);
 
   const toggleDarkMode = () => {
     dispatch({ type: "TOGGLE_DARKMODE" });
@@ -71,12 +70,10 @@ const Header = () => {
         setCurrentUser(curUser);
         setUser(curUser);
         setIsAuth(true);
-        // console.log(curUser);
       } else {
         setCurrentUser({});
         setUser({});
         setIsAuth(false);
-        // console.log(curUser);
       }
     });
   }, []);

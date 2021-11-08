@@ -20,7 +20,7 @@ const SearchPage = () => {
         params: {
           part: "snippet",
           maxResults: 50,
-          key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
+          key: process.env.REACT_APP_YOUTUBE_API_KEY,
           q: searchTerm,
           type: "video,channel,playlist",
         },
@@ -33,7 +33,7 @@ const SearchPage = () => {
 
   const skeletonData = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  if (data) console.log(data);
+  
   if (error) console.log(error);
   let disAbleHr = null;
 

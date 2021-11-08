@@ -14,7 +14,6 @@ const RelatedVideo = ({ image, title, channel, views, timestamp, videoId }) => {
       <div className="relatedVideo__thumbnail">
         {image ? (
           <Link
-            // href={`/watch/${videoId}`}
             to={`/watch/${videoId}`}
             className="relatedVideo__link"
           >
@@ -25,7 +24,6 @@ const RelatedVideo = ({ image, title, channel, views, timestamp, videoId }) => {
         )}
       </div>
       <Link
-        // href={`/watch/${videoId}`}
         to={`/watch/${videoId}`}
         className="relatedVideo__link"
       >

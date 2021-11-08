@@ -20,14 +20,14 @@ const Explore = () => {
           maxHeight: 350,
           maxResults: 50,
           regionCode: "GH",
-          key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
+          key: process.env.REACT_APP_YOUTUBE_API_KEY,
         },
       })
   );
 
   const skeletonData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  if (data) console.log(data);
+
   if (error) console.log(error);
   return (
     <div

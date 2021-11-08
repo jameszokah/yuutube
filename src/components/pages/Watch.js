@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import millify from "millify";
 import { Avatar, Button, IconButton } from "@mui/material";
 import {
@@ -10,7 +10,6 @@ import {
   ThumbUpOutlined,
 } from "@mui/icons-material";
 import { useQueries } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import youtube from "../../utils/youtube";
 import { useParams } from "react-router-dom";
 import ResponsiveEmbed from "react-responsive-embed";
@@ -25,14 +24,14 @@ import "./Watch.css";
 const Watch = () => {
   const [showMore, setShowMore] = useState(false);
   const [videoData, setVideoData] = useState([]);
-  const [relatedToVideoData, setRelatedToVideoData] = useState([]);
+
   const { videoId } = useParams();
   const { state } = useDarkTheme();
   const [
-    { data, isLoading, isError, error },
+    { data, isError, error },
     {
       data: relatedTo,
-      isLoading: reletedVideoLoading,
+
       error: relatedToError,
       isError: isRelatedError,
     },
@@ -45,7 +44,7 @@ const Watch = () => {
           params: {
             part: "snippet,contentDetails,statistics",
             id: videoId,
-            key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
+            key: process.env.REACT_APP_YOUTUBE_API_KEY,
           },
         })),
       refetchOnReconnect: "always",
@@ -61,7 +60,7 @@ const Watch = () => {
             relatedToVideoId: videoId,
             type: "video",
             maxResults: 30,
-            key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
+            key: process.env.REACT_APP_YOUTUBE_API_KEY,
           },
         })),
       refetchOnReconnect: "always",
@@ -69,85 +68,10 @@ const Watch = () => {
     },
   ]);
 
-  // const = useQuery(
-  //   "video",
-  //   async () =>
-  //     await youtube.get("videos", {
-  //       params: {
-  //         part: "snippet,contentDetails,statistics",
-  //         id: videoId,
-  //         key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
-  //       },
-  //     })
-  // );
-
-  // const  = useQuery(
-  //   "search",
-  //   async () =>
-  //     videoId &&
-  //     (await youtube.get("search", {
-  //       params: {
-  //         part: "snippet",
-  //         relatedToVideoId: videoId,
-  //         type: "video",
-  //         maxResults: 30,
-  //         key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
-  //       },
-  //     }))
-  // );
-
-  // useEffect(() => {
-  //   setVideoData((prevData) => [...prevData, ...data?.data?.items]);
-  //   setRelatedToVideoData((prevRelatedTo) => [
-  //     ...prevRelatedTo,
-  //     ...relatedTo?.data?.items,
-  //   ]);
-  //   return () => {
-  //     setVideoData([]);
-  //     setRelatedToVideoData([])
-  //   };
-  // }, [data?.data?.items, relatedTo?.data?.items]);
-
-  // useEffect(() => {
-  //   // console.log(relatedToVideoData);
-
-  //   // return () => {
-  //   //   setRelatedToVideoData([]);
-  //   // };
-  // }, [relatedTo?.data?.items]);
-
-  // useEffect(() => {
-  //   youtube
-  //     .get("search", {
-  //       params: {
-  //         part: "snippet",
-  //         relatedToVideoId: videoId,
-  //         type: "video",
-  //         maxResults: 30,
-  //         key: "AIzaSyAKCNMuwfa4S0C5lPGFvl8W6FSasH-Pipc",
-  //       },
-  //     })
-  //     .then((res) => setRelatedToVideoData([...res?.data?.items]))
-  //     .catch((err) => console.log(err));
-  // }, [videoId]);
-
-  // const {
-  //   snippet: {
-  //     description,
-  //     title,
-  //     channelTitle,
-  //     thumbnails: {
-  //       maxres: { url },
-  //     },
-  //   },
-  // } = videoData.kind === "youtube#video" && videoData;
-
   const [{ data: channelData }] = useChannelIcon(
     data?.data.items[0]?.snippet?.channelId
   );
-  data && console.log("channel ICON", data);
 
-  if (data && relatedTo) console.log(data, relatedTo);
   if (isError) console.log(error);
   if (isRelatedError) console.log(relatedToError);
   return (
@@ -240,7 +164,8 @@ const Watch = () => {
                           <Avatar
                             src={
                               channelInfo &&
-                              (channelInfo?.snippet?.thumbnails?.high.url || url)
+                              (channelInfo?.snippet?.thumbnails?.high.url ||
+                                url)
                             }
                             alt={channelTitle}
                             className="watch__channelAvatar"

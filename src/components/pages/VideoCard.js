@@ -22,12 +22,12 @@ const VideoCard = ({
   channelImage,
 }) => {
   const { state } = useDarkTheme();
-  const [{ data, error }] = useChannelIcon(channelId);
-  data && console.log("channel ICON", data);
+  const [{ data }] = useChannelIcon(channelId);
+
   const thumbnail =
     data &&
     data?.data?.items?.map((thumb) => thumb?.snippet?.thumbnails?.high?.url)[0];
-  console.log(thumbnail);
+ 
   return (
     <DarkSkeleton>
       <div className={`videoCard ${state.darkMode && "dark-videoCard"}`}>
