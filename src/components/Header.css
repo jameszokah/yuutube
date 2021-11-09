@@ -112,7 +112,7 @@
 
 @media screen and (max-width: 600px) {
     .header {
-        padding: 5px 8px;
+        padding: 5px 0;
         justify-content: space-evenly;
     }
     .header__menu {
@@ -121,24 +121,26 @@
     /* .header__searchBox {
         width: 25%;
     } */
-    .header__input {
+    /* .header__input {
         border: none;
         margin-right: 5px;
-    }
+    } */
     .header__input>input {
-        width: 0;
+        padding: 0 0 0 7px;
     }
     .header__logo {
         margin-left: 4px;
         height: 70px;
     }
     .header__avatar {
-        width: 30px !important;
-        height: 30px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
     .header__inputButton {
-        background-color: transparent;
-        border: none;
+        /* background-color: transparent; */
+        /* border: none; */
+        width: 36px !important;
+        padding: 0px;
     }
     .MuiButton-text {
         font-size: 12px;
@@ -146,10 +148,16 @@
     .header__icon {
         margin-left: 0 !important;
     }
+    /* .header__signInButton {
+        font-size: 0.6em !important;
+    } */
 }
 
 @media screen and (max-width: 400px) {
     .header__icon-disable {
         display: none !important;
+    }
+    .header__signInButton {
+        font-size: 0.5em !important;
     }
 }

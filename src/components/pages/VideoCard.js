@@ -67,7 +67,7 @@ const VideoCard = ({
             <Button
               style={{
                 backgroundColor: state.darkMode ? "#3B3B3B" : "lightgrey",
-                color: state.darkMode && "#AAAAAA",
+                color: state.darkMode ? "#AAAAAA" : "#000",
                 margin: "6px auto",
                 width: "100%",
                 paddingLeft: "18px",
@@ -76,12 +76,12 @@ const VideoCard = ({
               variant="contained"
               size="medium"
             >
-              <AccessTimeOutlined /> {" Watch Later"}
+              <AccessTimeOutlined /> {"  Watch Later"}
             </Button>
             <Button
               style={{
                 backgroundColor: state.darkMode ? "#3B3B3B" : "lightgrey",
-                color: state.darkMode && "#AAAAAA",
+                color: state.darkMode ? "#AAAAAA" : "#000",
                 margin: "6px auto",
                 width: "100%",
                 paddingLeft: "18px",
@@ -90,7 +90,7 @@ const VideoCard = ({
               variant="contained"
               size="medium"
             >
-              <PlaylistPlayOutlined /> {" Add To Queue"}
+              <PlaylistPlayOutlined /> {"  Add To Queue"}
             </Button>
           </div>
         </div>

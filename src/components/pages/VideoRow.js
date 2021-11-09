@@ -57,7 +57,7 @@ const VideoRow = ({
           </h3>
           <p className="videoRow__headline">
             {!explore && data && millify(channelInfo?.statistics?.viewCount)}
-            {!explore && " views . "}
+            {!explore && data && " views . "}
             {<TimeAgo date={new Date(timestamp)} /> || <Skeleton width={70} />}
           </p>
           <div className="videoRow__channel">

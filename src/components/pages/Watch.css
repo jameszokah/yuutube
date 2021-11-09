@@ -170,7 +170,7 @@
 }
 
 .dark-watch .watch__showMore {
-    color: #fff;
+    color: #fff !important;
 }
 
 .watch__relatedVideos {
@@ -192,15 +192,15 @@
 
 @media screen and (max-width: 480px) {
     .watch {
+        padding-left: 10px;
         flex-direction: column;
-        margin: 2px 20px;
     }
     .watch__likeItem {
         margin-left: 0;
     }
     .watch__likeItem>h4 {
         font-size: 0.6em;
-        margin-left: 8px;
+        margin-left: 4px;
     }
     .watch__likeItemIcon {
         font-size: 1.3rem !important;
@@ -215,12 +215,30 @@
         width: 50px !important;
         height: 50px !important;
     }
+    .watch__subscribeButton {
+        font-size: 0.7em !important;
+        height: 28px !important;
+    }
+    .watch__channelText h4 {
+        font-size: 0.8em;
+    }
+    .watch__channelText p {
+        font-size: 0.6em;
+    }
+    .watch__videoDescription>p {
+        font-size: 12px;
+    }
+    .watch__showMore {
+        font-size: 0.7em !important;
+    }
+    .watch__headline>h2 {
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .watch {
         flex-direction: column;
-        margin: 2px 20px;
     }
 }
 

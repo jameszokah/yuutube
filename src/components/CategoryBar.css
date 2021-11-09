@@ -9,7 +9,7 @@
 }
 
 .categorybarWrapper.divider {
-    width: 460px;
+    width: 470px;
 }
 
 .categorybar {
@@ -71,6 +71,7 @@
 @media screen and (max-width: 600) {
     .categorybarWrapper {
         width: 260px;
+        padding: 0 !important;
     }
     .categorybar {
         margin: 0 4px;

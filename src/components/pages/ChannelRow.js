@@ -43,27 +43,31 @@ const ChannelRow = ({
             color: state.darkMode && "#ffffff",
           }}
         >
-          {data && millify(channelInfo?.statistics?.subscriberCount)}{" "}
-          subscribers . {data && channelInfo?.statistics?.videoCount} videos
+          {(data &&
+            `${millify(
+              channelInfo?.statistics?.subscriberCount
+            )}  subscribers . ${
+              channelInfo?.statistics?.videoCount
+            } videos`) || <Skeleton width={160} />}
         </p>
         <p
           style={{
             color: state.darkMode && "#ffffff",
           }}
         >
-          {description || <Skeleton />}
+          {description || <Skeleton width={160} />}
         </p>
       </div>
-      <Button
+      {data && <Button
         variant="contained"
         color="error"
         className="channelRow__subscribeButton"
       >
         SUBSCRIBE
-      </Button>
-      <IconButton>
+      </Button>}
+      {data && <IconButton>
         <NotificationsOutlined className="channelRow__notification" />
-      </IconButton>
+      </IconButton>}
     </div>
   );
 };

@@ -167,6 +167,7 @@ const Header = () => {
             variant="outlined"
             startIcon={<Avatar className="header__signInAvatar" />}
             onClick={signIn}
+            className="header__signInButton"
             size="small"
           >
             Sign In
