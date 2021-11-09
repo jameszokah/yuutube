@@ -1,3 +1,4 @@
+
 # YuuTube 
 
 ## This is a youtube clone that was built with react js
@@ -12,6 +13,10 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
+<img src="https://user-images.githubusercontent.com/57928392/141011607-fc45e48a-f12f-45e5-b1a4-293a08059f3d.png" alt="yuutube-darkmode" width="800" />
+
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
