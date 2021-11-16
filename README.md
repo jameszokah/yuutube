@@ -3,6 +3,8 @@
 
 ## This is a youtube clone that was built with react js
 
+Live demo [http://yuutube.netlify.app](http://yuutube.netlify.app) to view it in the browser.
+
 ## Available Scripts
 
 In the project directory, you can run:
