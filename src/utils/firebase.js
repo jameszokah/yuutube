@@ -3,15 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAEV1CyxqKHEDsgwMh0ZwPhun4lvcMMwgE",
-//   authDomain: "utube-4e06d.firebaseapp.com",
-//   projectId: "utube-4e06d",
-//   storageBucket: "utube-4e06d.appspot.com",
-//   messagingSenderId: "495228966258",
-//   appId: "1:495228966258:web:012627e9ce78b1a367b9eb",
-//   measurementId: "G-QEPK403ELQ",
-// };
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
