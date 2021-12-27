@@ -108,7 +108,6 @@ const Watch = () => {
               if (id === videoId) {
                 document.title = title;
                 const channelInfo = channelData && channelData?.data?.items[i];
-                console.log(channelInfo);
                 return (
                   <>
                     <div key={id} className="watch__headline">
@@ -134,7 +133,7 @@ const Watch = () => {
                                 <ThumbDownOutlined className="watch__likeItemIcon" />
                               </IconButton>
 
-                              <h4>{millify(dislikeCount)}</h4>
+                              <h4>DISLIKE</h4>
                             </div>
                           </div>
                           <div className="watch__likeItem">
@@ -230,6 +229,8 @@ const Watch = () => {
                   </>
                 );
               }
+              return <div key={id}></div>;
+              
             }
           )}
 
