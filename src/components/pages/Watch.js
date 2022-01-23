@@ -230,7 +230,6 @@ const Watch = () => {
                 );
               }
               return <div key={id}></div>;
-              
             }
           )}
 
@@ -242,13 +241,17 @@ const Watch = () => {
             <CategoryBar divider={false} />
             {relatedTo?.data?.items.map(
               (video) =>
-                video.snippet &&
-                (video.snippet.thumbnails.high.url ||
+                video?.snippet &&
+                (video?.snippet?.thumbnails?.maxres?.url ||
+                  video?.snippet?.thumbnails?.high?.url ||
                   videoData[0]?.snippet?.thumbnails?.standard?.url) && (
                   <RelatedVideo
                     videoId={video?.id?.videoId}
                     title={video?.snippet?.title}
-                    image={video?.snippet?.thumbnails?.high?.url}
+                    image={
+                      video?.snippet?.thumbnails?.maxres?.url ||
+                      video?.snippet?.thumbnails?.high?.url
+                    }
                     channel={video?.snippet?.channelTitle}
                     views=""
                     timestamp={video?.snippet?.publishedAt}

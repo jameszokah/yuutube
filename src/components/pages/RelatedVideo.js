@@ -13,20 +13,14 @@ const RelatedVideo = ({ image, title, channel, views, timestamp, videoId }) => {
     <div className="relatedVideo">
       <div className="relatedVideo__thumbnail">
         {image ? (
-          <Link
-            to={`/watch/${videoId}`}
-            className="relatedVideo__link"
-          >
+          <Link to={`/watch/${videoId}`} className="relatedVideo__link">
             <img src={image ? image : ""} alt={channel} />
           </Link>
         ) : (
           <Skeleton height={130} />
         )}
       </div>
-      <Link
-        to={`/watch/${videoId}`}
-        className="relatedVideo__link"
-      >
+      <Link to={`/watch/${videoId}`} className="relatedVideo__link">
         <div className="relatedVideo__text">
           <h4
             className="relatedVideo__title"
@@ -34,8 +28,10 @@ const RelatedVideo = ({ image, title, channel, views, timestamp, videoId }) => {
           >
             {title ? title : <Skeleton />}
           </h4>
-          <p>{channel ? channel : <Skeleton />}</p>
-          <p>
+          <p style={{ color: state.darkMode && "#ffffff94" }}>
+            {channel ? channel : <Skeleton />}
+          </p>
+          <p style={{ color: state.darkMode && "#ffffff94" }}>
             {views} <TimeAgo date={new Date(timestamp)} />
           </p>
         </div>

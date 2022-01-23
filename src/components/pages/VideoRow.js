@@ -55,7 +55,10 @@ const VideoRow = ({
           >
             {title || <Skeleton width={210} />}
           </h3>
-          <p className="videoRow__headline">
+          <p
+            className="videoRow__headline"
+            style={{ color: state.darkMode && "#ffffff6c" }}
+          >
             {!explore && data && millify(channelInfo?.statistics?.viewCount)}
             {!explore && data && " views . "}
             {<TimeAgo date={new Date(timestamp)} /> || <Skeleton width={70} />}
@@ -73,10 +76,15 @@ const VideoRow = ({
                   alt=""
                 />
               ) || <Skeleton circle width={30} height={30} />)}
-            <p>{channel || <Skeleton width={100} />} </p>
+            <p style={{ color: state.darkMode && "#ffffff6c" }}>
+              {channel || <Skeleton width={100} />}{" "}
+            </p>
           </div>
 
-          <p className="videoRow__description">
+          <p
+            className="videoRow__description"
+            style={{ color: state.darkMode && "#ffffff6c" }}
+          >
             {shortTitle(description, 120, title) || <Skeleton width={300} />}
           </p>
         </div>

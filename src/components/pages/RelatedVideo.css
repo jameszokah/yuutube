@@ -30,12 +30,14 @@
 .relatedVideo__text h4 {
     font: 1em;
     color: #020202;
+    padding-bottom: 3.3px;
     font-weight: 500;
 }
 
 .relatedVideo__text>p {
     color: #606060;
     font-size: 12px;
+    letter-spacing: 0.03em;
 }
 
 @media screen and (max-width: 600px) {
